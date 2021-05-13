@@ -1,0 +1,144 @@
+2021-04-28 21:53:40 DEBUG - Get settings from: settings.json
+2021-04-28 21:53:45 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-28 21:53:45 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-28 22:04:10 DEBUG - Get settings from: settings.json
+2021-04-28 22:04:11 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-28 22:04:11 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-28 22:08:52 DEBUG - Get settings from: settings.json
+2021-04-28 22:08:53 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-28 22:08:53 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-28 22:15:51 DEBUG - Get settings from: settings.json
+2021-04-28 22:15:52 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-28 22:15:52 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-28 22:23:15 DEBUG - Get settings from: settings.json
+2021-04-28 22:23:16 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-28 22:23:16 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-29 08:18:36 DEBUG - Get settings from: settings.json
+2021-04-29 08:18:37 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-29 08:18:37 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-29 08:19:40 DEBUG - Get settings from: settings.json
+2021-04-29 08:19:41 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-29 08:19:41 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-29 08:24:26 DEBUG - Get settings from: settings.json
+2021-04-29 08:24:27 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-29 08:24:27 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
+2021-04-29 08:35:35 DEBUG - Get settings from: settings.json
+2021-04-29 08:35:36 DEBUG - Got browser profile options from settings file: 
+intl.accept_languages: en,
+safebrowsing.enabled: true,
+profile.default_content_settings.popups: 0,
+disable-popup-blocking: true,
+download.prompt_for_download: false,
+download.default_directory: //home//selenium//downloads
+2021-04-29 08:35:36 DEBUG - Got browser capabilities from settings file: 
+enableVNC: True,
+loggingPrefs: {
+  "driver": "INFO",
+  "server": "OFF",
+  "browser": "FINE"
+},
+unhandledPromptBehavior: default
