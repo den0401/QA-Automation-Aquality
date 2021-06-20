@@ -1,20 +1,17 @@
-﻿using Aquality.Selenium.Browsers;
-using Aquality.Selenium.Elements.Interfaces;
+﻿using Aquality.Selenium.Elements.Interfaces;
+using Aquality.Selenium.Forms;
 using OpenQA.Selenium;
 
 namespace Aquality.Selenium.Template.Forms.Pages
 {
-    public class MainPage
+    public class MainPage: Form
     {
-        private readonly ILink _link = AqualityServices.Get<IElementFactory>().GetLink(By.XPath("//a[@class = 'start__link']"), "startLink");
+        private ILink Link => ElementFactory.GetLink(By.XPath("//a[@class = 'start__link']"), "Start link");
 
-        private readonly Browser _browser;                
-
-        public Card1Page StartLink()
+        public MainPage() : base(By.XPath("//a[@href='/game.html']"), "Main page")
         {
-            _link.Click();
-
-            return new Card1Page(_browser);
         }
+
+        public void StartLink() => Link.Click();
     }
 }

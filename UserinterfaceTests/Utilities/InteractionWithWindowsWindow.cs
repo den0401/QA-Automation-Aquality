@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Aquality.Selenium.Browsers;
-using AutoItX3Lib;
-using Aquality.Selenium.Template.Utilities;
+﻿using AutoItX3Lib;
+using Aquality.Selenium.Template.Configuration;
+using System;
 
 namespace UserinterfaceTests.Utilities
 {
     public static class InteractionWithWindowsWindow
     {
-        public static void SelectImage(string windowName, string pathToPicture)
+        public static void SelectImage()
         {
             AutoItX3 autoIt = new AutoItX3();
-            autoIt.WinActivate(windowName);
+            autoIt.WinActivate(Configuration.WindowsWindowName);
 
-            WaitUntil.WaitSomeInterval();
+            autoIt.WinWaitActive(Configuration.WindowsWindowName, "Dialog window is not opened",
+                Convert.ToInt32(Configuration.WaitingTime));
 
-            autoIt.Send(pathToPicture);
+            autoIt.Send(Configuration.PathToImage);
             autoIt.Send("{ENTER}");
         }
-
     }
 }

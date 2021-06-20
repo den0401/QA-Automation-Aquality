@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using Aquality.Selenium.Template.Forms.Pages;
 using Aquality.Selenium.Template.Configuration;
-using System;
 
 namespace UserinterfaceTests
 {
@@ -15,18 +14,18 @@ namespace UserinterfaceTests
             mainPage.StartLink();
             Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
-            Card1Page card1Page = new Card1Page(_browser);
+            Card1Page card1Page = new Card1Page();
             card1Page.FillCard1();
 
-            Card2Page card2Page = new Card2Page(_browser);
-            Assert.AreEqual(Configuration.SecondCardIndicator, card2Page.SecondCardIndicator);
+            Card2Page card2Page = new Card2Page();
+            Assert.IsTrue(card2Page.SecondCardIndicatorIsDisplayed());
                         
             card2Page.CheckThreeRandomCheckboxesAndClickUploadButton();
-            Utilities.InteractionWithWindowsWindow.SelectImage(Configuration.WindowsWindowName, Configuration.PathToImage);
+            Utilities.InteractionWithWindowsWindow.SelectImage();
             card2Page.ClickNextButton();
 
-            Card3Page card3Page = new Card3Page(_browser);
-            Assert.AreEqual(Configuration.ThirdCardIndicator, card3Page.ThirdCardIndicator);
+            Card3Page card3Page = new Card3Page();
+            Assert.IsTrue(card3Page.ThirdCardIndicatorIsDisplayed());
         }
 
         [Test]
@@ -36,9 +35,9 @@ namespace UserinterfaceTests
             mainPage.StartLink();
             Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
-            Card1Page card1Page = new Card1Page(_browser);
+            Card1Page card1Page = new Card1Page();
             card1Page.HideHelpForm();
-            Assert.IsTrue(card1Page.HelpForm.State.WaitForNotDisplayed(TimeSpan.FromSeconds(2)));
+            Assert.IsFalse(card1Page.HelpFormIsDisplayed());            
         }
 
         [Test]
@@ -48,9 +47,9 @@ namespace UserinterfaceTests
             mainPage.StartLink();
             Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
-            Card1Page card1Page = new Card1Page(_browser);
+            Card1Page card1Page = new Card1Page();
             card1Page.AcceptCookies();
-            Assert.IsTrue(card1Page.AcceptCookieButton.State.WaitForNotDisplayed(TimeSpan.FromSeconds(2)));
+            Assert.IsFalse(card1Page.AcceptCookiesIsDisplayed());
         }
 
         [Test]
@@ -60,8 +59,8 @@ namespace UserinterfaceTests
             mainPage.StartLink();
             Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
-            Card1Page card1Page = new Card1Page(_browser);
-            Assert.AreEqual("00:00:00", card1Page.CheckTimer());
+            Card1Page card1Page = new Card1Page();
+            Assert.IsTrue(card1Page.TimerIsStartedFromZero());
         }
     }
 }

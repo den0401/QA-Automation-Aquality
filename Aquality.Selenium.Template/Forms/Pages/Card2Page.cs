@@ -3,67 +3,57 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using Aquality.Selenium.Elements.Interfaces;
+using Aquality.Selenium.Forms;
 
 namespace Aquality.Selenium.Template.Forms.Pages
 {
-    public class Card2Page
+    public class Card2Page: Form
     {
-        private readonly Browser _browser;
-
-        private readonly ICheckBox _unselectAllCheckbox = AqualityServices.Get<IElementFactory>().GetCheckBox(By.XPath("//label[@for = 'interest_unselectall']/span[@class = 'checkbox__box']"), "UnselectAll");
-        private readonly IButton _uploadButton = AqualityServices.Get<IElementFactory>().GetButton(By.XPath("//a[@class = 'avatar-and-interests__upload-button']"), "Upload");
-        private readonly IButton _nextButton = AqualityServices.Get<IElementFactory>().GetButton(By.CssSelector("button.button.button--stroked"), "Next");
-        private readonly ILabel _secondCardIndicator = AqualityServices.Get<IElementFactory>().GetLabel(By.XPath("//div[@class = 'page-indicator']"), "2/4");
+        private ICheckBox UnselectAllChbx => ElementFactory.GetCheckBox(By.XPath("//label[@for = 'interest_unselectall']/span[@class = 'checkbox__box']"), "UnselectAll");
+        private IButton UploadBtn => ElementFactory.GetButton(By.XPath("//a[@class = 'avatar-and-interests__upload-button']"), "Upload");
+        private IButton NextBtn => ElementFactory.GetButton(By.CssSelector("button.button.button--stroked"), "Next");
+        private ILabel SecondCardIndicator => ElementFactory.GetLabel(By.XPath("//div[@class = 'page-indicator']"), "Page indicator 2 / 4");
 
         private readonly By _xPathUnselectAllCheckbox = By.XPath("//label[@for = 'interest_unselectall']/span[@class = 'checkbox__box']");
         private readonly By _xPathCheckboxesArray = By.XPath("//span[@class = 'checkbox__box']");
         private readonly By _xPathSelectAllCheckbox = By.XPath("//label[@for = 'interest_selectall']/span[@class = 'checkbox__box']");
+        private readonly string _secondCardIndicator = "2 / 4";
 
-        public string SecondCardIndicator
-        {
-            get
-            {
-                return _secondCardIndicator.GetText();
-            }
+        public Card2Page() : base(By.Id("//div[@class = 'page-indicator']"), "2 / 4")
+        {        
         }
 
-        public Card2Page(Browser browser)
-        {
-            _browser = browser;            
-        }
+        public bool SecondCardIndicatorIsDisplayed() => SecondCardIndicator.GetText().Equals(_secondCardIndicator);
 
         public void CheckThreeRandomCheckboxesAndClickUploadButton()
         {
-            _unselectAllCheckbox.Check();
+            UnselectAllChbx.Check();
 
             Random rand = new Random();
 
             List<IWebElement> allCheckboxes = new List<IWebElement>();
 
-            foreach (var item in _browser.Driver.FindElements(_xPathCheckboxesArray))
+            foreach (var item in AqualityServices.Browser.Driver.FindElements(_xPathCheckboxesArray))
                 allCheckboxes.Add(item);
 
-            ClickRandomChecbox(rand, allCheckboxes);
+            SelectThreeCheckboxes(rand, allCheckboxes);
 
-            _uploadButton.Click();
+            UploadBtn.Click();
         }
 
-        public Card3Page ClickNextButton()
-        {
-            _nextButton.Click();
+        public void ClickNextButton() => NextBtn.Click();
 
-            return new Card3Page(_browser);
-        }
-
-        private void ClickRandomChecbox(Random rand, List<IWebElement> allCheckboxes)
+        private void SelectThreeCheckboxes(Random rand, List<IWebElement> allCheckboxes)
         {
-            int counter = 0;
-            while (counter < 3)
+            int counter = 1;
+            int requiredNumberOfCheckboxes = 3;
+
+            while (counter <= requiredNumberOfCheckboxes)
             {
-                int randomCheckbox = rand.Next(0, _browser.Driver.FindElements(_xPathCheckboxesArray).Count);
+                int randomCheckbox = rand.Next(0, AqualityServices.Browser.Driver.FindElements(_xPathCheckboxesArray).Count);
 
-                if (!allCheckboxes[randomCheckbox].Equals(_browser.Driver.FindElement(_xPathUnselectAllCheckbox)) &&
-                    !allCheckboxes[randomCheckbox].Equals(_browser.Driver.FindElement(_xPathSelectAllCheckbox)) &&
+                if (!allCheckboxes[randomCheckbox].Equals(AqualityServices.Browser.Driver.FindElement(_xPathUnselectAllCheckbox)) &&
+                    !allCheckboxes[randomCheckbox].Equals(AqualityServices.Browser.Driver.FindElement(_xPathSelectAllCheckbox)) &&
                     !allCheckboxes[randomCheckbox].Selected)
                 {
                     allCheckboxes[randomCheckbox].Click();
