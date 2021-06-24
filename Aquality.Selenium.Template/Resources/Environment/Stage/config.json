@@ -1,7 +1,7 @@
 ﻿{
   "startUrl": "https://userinyerface.com/game.html%20target=",
-  "signUpPageUrl": "https://userinyerface.com/game.html",
   "waitingTime": "2",
   "windowsWindowName": "Open",
-  "pathToImage": "C:\\Users\\burii\\Pictures\\Screenpresso\\1.png"
+  "pathToImage": "source\\repos\\QA-Automation\\UserinterfaceTests\\TestData\\Images\\1.png",
+  "timerValue": "00:00:00"
 }

@@ -12,7 +12,6 @@ namespace UserinterfaceTests
         {
             MainPage mainPage = new MainPage();
             mainPage.StartLink();
-            Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
             Card1Page card1Page = new Card1Page();
             card1Page.FillCard1();
@@ -21,7 +20,7 @@ namespace UserinterfaceTests
             Assert.IsTrue(card2Page.SecondCardIndicatorIsDisplayed());
                         
             card2Page.CheckThreeRandomCheckboxesAndClickUploadButton();
-            Utilities.InteractionWithWindowsWindow.SelectImage();
+            Utilities.InteractionWithWindowsWindow.SelectImage(Configuration.PathToImage);
             card2Page.ClickNextButton();
 
             Card3Page card3Page = new Card3Page();
@@ -33,7 +32,6 @@ namespace UserinterfaceTests
         {
             MainPage mainPage = new MainPage();
             mainPage.StartLink();
-            Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
             Card1Page card1Page = new Card1Page();
             card1Page.HideHelpForm();
@@ -45,7 +43,6 @@ namespace UserinterfaceTests
         {
             MainPage mainPage = new MainPage();
             mainPage.StartLink();
-            Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
             Card1Page card1Page = new Card1Page();
             card1Page.AcceptCookies();
@@ -57,7 +54,6 @@ namespace UserinterfaceTests
         {
             MainPage mainPage = new MainPage();
             mainPage.StartLink();
-            Assert.AreEqual(_browser.CurrentUrl, Configuration.SignUpPageUrl);
 
             Card1Page card1Page = new Card1Page();
             Assert.IsTrue(card1Page.TimerIsStartedFromZero());

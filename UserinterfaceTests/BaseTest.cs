@@ -28,8 +28,6 @@ namespace UserinterfaceTests
 
             _browser.GoTo(Configuration.StartUrl);
             _browser.WaitForPageToLoad();
-
-            Assert.AreEqual(_browser.CurrentUrl, Configuration.StartUrl);
         }
     }
 }
