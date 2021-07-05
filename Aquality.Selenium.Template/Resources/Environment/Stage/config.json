@@ -1,0 +1,7 @@
+﻿{
+  "startUrl": "https://userinyerface.com/game.html%20target=",
+  "waitingTime": "2",
+  "windowsWindowName": "Open",
+  "pathToImage": "source\\repos\\QA-Automation\\UserinterfaceTests\\TestData\\Images\\1.png",
+  "timerValue": "00:00:00"
+}
